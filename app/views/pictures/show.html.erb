@@ -1,2 +1,11 @@
-<h1>Pictures#show</h1>
-<p>Find me in app/views/pictures/show.html.erb</p>
+<h1><%= @picture.title %></h1>
+<img src= "<%= @picture.image_url %>" >
+<h3>My Comments</h3>
+<ul>
+  <li>
+    <% @picture.comments.each do |comment| %>
+        <%= link_to comment.user.username, user_path(comment.user) %>
+        <%= comment.message %>
+    <% end %>
+  </li>
+</ul>

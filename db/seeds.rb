@@ -21,12 +21,12 @@ thomas = User.create(username: "Thomas", email: "thomas@mercury.com", password_d
 traci = User.create(username: "Traci", email: "traci@earth.com", password_digest: BCrypt::Password.create('Fl0w3r$3v3rywh3re'))
 
 
-dress1 = Picture.create(image_url:"https://goo.gl/images/BceTz5" , title: "Sophia Wedding Dress", user_id: 4)
-dress2 = Picture.create(image_url:"https://goo.gl/images/BKAYaS" , title: "Modern Wedding Dress", user_id: 5)
-dish1 = Picture.create(image_url:"https://goo.gl/images/sR8BqR" , title: "Steak Marinade", user_id: 2)
-dish2 = Picture.create(image_url:"https://goo.gl/images/mKmKM5" , title: "Shoyu Ramen", user_id: 1)
-vacation_rental1 = Picture.create(image_url:"https://goo.gl/images/skoYmG" , title: "Beach House", user_id: 3)
-vacation_rental2 = Picture.create(image_url:"https://goo.gl/images/HC535y" , title: "Mountain Cabin", user_id: 7)
+dress1 = Picture.create(image_url:"https://media.brides.com/photos/5ad509b236fcc47507d12c08/1:1/w_767/sophia-tolli-wedding-dresses-spring-2019-032.jpg" , title: "Sophia Wedding Dress", user_id: 4)
+dress2 = Picture.create(image_url:"https://s-media-cache-ak0.pinimg.com/736x/c1/4a/0f/c14a0f8b499d590811a0f95e01e74c03--wedding-events-wedding-bells.jpg" , title: "Modern Wedding Dress", user_id: 5)
+dish1 = Picture.create(image_url:"https://therecipecritic.com/wp-content/uploads/2018/01/worlds_best_steak_marinade-1-of-1.jpg" , title: "Steak Marinade", user_id: 2)
+dish2 = Picture.create(image_url:"https://www.pickledplum.com/wp-content/uploads/2018/02/shoyu-ramen-1OPTM.jpg" , title: "Shoyu Ramen", user_id: 1)
+vacation_rental1 = Picture.create(image_url:"https://blog1.fkimg.com/wp-content/uploads/2017/03/San-Diego-California-Friends-Summer-Beach-House.jpg" , title: "Beach House", user_id: 3)
+vacation_rental2 = Picture.create(image_url:"https://i.pinimg.com/originals/ba/d1/06/bad106f3165067db289cc375786d807f.jpg" , title: "Mountain Cabin", user_id: 7)
 
 tag1 = Tag.create(name: "Dresses")
 tag2 = Tag.create(name: "Meal")

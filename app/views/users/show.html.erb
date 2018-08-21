@@ -1,2 +1,14 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1><%= @user.username %></h1>
+<h3>My Pictures</h3>
+<% @user.pictures.each do |picture| %>
+    <img src= "<%= picture.image_url %>" >
+<%end%>
+<br> <br>
+<h3>My Comments</h3>
+<ul>
+  <li>
+    <% @user.comments.each do |comment| %>
+        <%= comment.message %>
+    <% end %>
+  </li>
+</ul>
