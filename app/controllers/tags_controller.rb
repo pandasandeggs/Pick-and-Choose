@@ -1,8 +1,10 @@
 class TagsController < ApplicationController
   def index
+    @tags = Tag.all
   end
 
   def show
+    @tag = Tag.find(params[:id])
   end
 
   def edit
@@ -10,4 +12,11 @@ class TagsController < ApplicationController
 
   def new
   end
+
+  def tag_count
+    Tag.all.map do |tag|
+      tag.pictures.length
+    end
+  end
+
 end

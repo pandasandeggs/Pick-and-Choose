@@ -10,6 +10,18 @@
   </head>
 
   <body>
+    <% if session[:user_id] %>
+    <%= "Logged in as #{session[:user_id]}" %>
+  <table>
+    <tr>
+        <td><%= button_to "My Account", '/sessions', method: 'get' %></td>
+        <td><%= button_to "Add Photo", '/pictures/new', method: 'get' %></td>
+        <td><%= button_to "Logout", '/sessions', method: 'delete' %></td>
+    </tr>
+  </table>
+  <% else %>
+     Logged Out
+    <% end %>
     <%= yield %>
   </body>
 </html>

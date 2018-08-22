@@ -1,6 +1,10 @@
 <h1>Comments </h1>
 <p>
-  <% @comments.each do |comment| %>
-    <%= comment.message %>
-  <%end%>
+  <ul>
+    <% @comments.each do |comment| %>
+      <li><%= comment.message %></li>
+      <%= link_to comment.user.username, user_path(comment.user) %>
+       <img src= "<%= comment.picture.image_url %>"> <br><br>
+    <%end%>
+  </ul>
 </p>

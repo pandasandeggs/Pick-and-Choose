@@ -1,7 +1,9 @@
 <h1><%= @user.username %></h1>
 <h3>My Pictures</h3>
 <% @user.pictures.each do |picture| %>
+  <%= link_to picture_path(picture) do %>
     <img src= "<%= picture.image_url %>" >
+  <%end%>
 <%end%>
 <br> <br>
 <h3>My Comments</h3>
@@ -12,3 +14,5 @@
     <% end %>
   </li>
 </ul>
+<br><br>
+<%= button_to "Cancel Account", @user, method: :delete, data:{confirm: "Are You Sure?"} %>
