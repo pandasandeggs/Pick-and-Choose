@@ -21,12 +21,6 @@ class TagsController < ApplicationController
     redirect_to_user_path(current_user)
   end
 
-  def tag_count
-    Tag.all.map do |tag|
-      tag.pictures.length
-    end
-  end
-
   private
     def tag_params
       params.require(:tag).permit(:name)

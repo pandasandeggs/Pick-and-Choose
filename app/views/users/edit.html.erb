@@ -1,2 +1,20 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<h1>Edit Account</h1>
+
+<%= form_with model: @user do |form| %>
+ <div>
+  Username: <%= form.text_field :username%>
+ </div>
+ <div>
+  Email: <%= form.text_field :email%>
+ </div>
+ <div>
+  Confirm email: <%= form.text_field :email_confirmation %>
+ </div>
+ <div>
+  Password: <%= form.password_field :password %>
+ </div>
+ <div>
+  Confirm Password: <%= form.password_field :password_confirmation %>
+ </div>
+  <%= form.submit  %>
+<%end%>

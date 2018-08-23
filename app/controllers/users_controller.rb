@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
   end
 
   def new
@@ -28,6 +29,13 @@ class UsersController < ApplicationController
       redirect_to user_path(user)
     end
   end #create
+
+  def update
+    #byebug
+    @user = User.find(params[:id])
+    @user.update(user_params)
+    redirect_to user_path(@user)
+  end
 
   def destroy
     @user = User.find(params[:id])

@@ -14,9 +14,10 @@
     <%= "Logged in as #{session[:user_id]}" %>
   <table>
     <tr>
-        <td><%= button_to "My Account", '/sessions', method: 'get' %></td>
-        <td><%= button_to "Add Photo", '/pictures/new', method: 'get' %></td>
+        <td><%= button_to "My Account", "/users/#{session[:user_id]}", method: 'get' %></td>
         <td><%= button_to "My Feed", '/pictures', method: 'get' %></td>
+        <td><%= button_to "Trending", '/tags', method: 'get' %></td>  
+        <td><%= button_to "Add Photo", '/pictures/new', method: 'get' %></td>
         <td><%= button_to "Logout", '/sessions', method: 'delete' %></td>
 
     </tr>

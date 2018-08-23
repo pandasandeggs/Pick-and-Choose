@@ -1,4 +1,14 @@
 <h1>Tags</h1>
+<h3>Trending</h3>
+  <li><%= link_to "#"+ "#{Tag.trending}", Tag.find_by(name: Tag.trending) %></li><br>
+
+<h3>Most Popular</h3>
+  <% Tag.most_popular.each do |tag| %>
+    <li><%= link_to "#"+ "#{tag}", Tag.find_by(name: tag) %></li>
+  <%end%><br>
+
+
+<h3>Recent Tags</h3>
 <ul>
   <% @tags.each do |tag| %>
   <li>  <%=link_to "#"+ "#{tag.name}", tag_path(tag) %> </li>
