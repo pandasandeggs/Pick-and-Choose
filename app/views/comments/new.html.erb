@@ -1,2 +1,7 @@
-<h1>Comments#new</h1>
-<p>Find me in app/views/comments/new.html.erb</p>
+<h3>Add Comment</h3>
+  <%= form_with model: Comment.new do |form| %>
+  <div><% form.text_field :picture_id, value: @picture.id %></div>
+   <div><% form.text_field :user_id, value: session[:user_id] %></div>
+   <div><%=form.text_area :message %></div>
+   <%= form.submit %>
+ <%end%>

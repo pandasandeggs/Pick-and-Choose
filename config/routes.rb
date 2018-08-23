@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :picture_tags
   resources :tags
-  resources :pictures
+  resources :pictures do
+    resources :comments
+  end
   resources :comments
   resources :users
   #resources :sessions, only: [:new, :create, :destroy]

@@ -11,6 +11,14 @@ class TagsController < ApplicationController
   end
 
   def new
+    @tag = Tag.new
+  end
+
+  def create
+    @tag = Tag.new(tag_params)
+    @tag.user = current_user
+    @tag.save
+    redirect_to_user_path(current_user)
   end
 
   def tag_count
@@ -18,5 +26,10 @@ class TagsController < ApplicationController
       tag.pictures.length
     end
   end
+
+  private
+    def tag_params
+      params.require(:tag).permit(:name)
+    end
 
 end

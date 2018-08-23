@@ -1,2 +1,7 @@
-<h1>Tags#new</h1>
-<p>Find me in app/views/tags/new.html.erb</p>
+<h1>Add New Tag</h1>
+<%= form_with model: @tag do |form| %>
+ <div>
+  Tag name: <%= form.text_field :name %>
+ </div>
+  <%= form.submit %>
+<%end%>

@@ -5,6 +5,7 @@ class PicturesController < ApplicationController
 
   def show
     @picture = Picture.find(params[:id])
+    session[:picture_id] = @picture.id
   end
 
   def edit
@@ -23,7 +24,7 @@ class PicturesController < ApplicationController
 
 private
   def picture_params
-    params.require(:picture).permit(:image_url, :title, tag_ids: [])
+    params.require(:picture).permit(:image_url, :title, :user_id, comment_ids: [], tag_ids: [])
   end
 
 end
