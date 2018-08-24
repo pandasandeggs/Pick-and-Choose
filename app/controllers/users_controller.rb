@@ -39,7 +39,23 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find(params[:id])
-    @user.destroy
+    #Destroy user Comments & Pictures if deleting Account
+    if @user.comments || @user.pictures
+      #Destroy picture_tags first!!
+        if @user.comments
+          @user.comments.each do |comment|
+            comment.message.destroy
+          end
+        end
+        if @user.pictures
+          @user.pictures.each do |picture|
+            picture.destroy
+          end
+        end
+        @user.destroy
+    else
+        @user.destroy
+    end
     redirect_to login_path
   end
 

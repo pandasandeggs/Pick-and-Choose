@@ -1,18 +1,28 @@
 <h1><%= @user.username %></h1>
 <h3>My Pictures</h3>
+<table>
 <% @user.pictures.each do |picture| %>
   <%= link_to picture_path(picture) do %>
-    <img src= "<%= picture.image_url %>" >
+  <tr>
+    <td><img src= "<%= picture.image_url %>" width = "500" height = "500"></td>
+    <td>        </td>
+    <td><%= button_to 'Delete', picture, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
   <%end%>
 <%end%>
+</table>
 <br> <br>
 <h3>My Comments</h3>
-<ul>
-  <li>
+<table>
     <% @user.comments.each do |comment| %>
-        <%= comment.message %>
+      <tr>
+        <td><%= comment.message %></td>
+        <td>          </td>
+        <td><%= button_to 'Edit', comment, method: :patch, data: { confirm: 'Are you sure?' } %></td>
+        <td>          </td>
+        <td><%= button_to 'Delete', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
     <% end %>
-  </li>
-</ul>
+</table>
 <br><br>
 <%= button_to "Cancel Account", @user, method: :delete, data:{confirm: "Are You Sure?"} %>

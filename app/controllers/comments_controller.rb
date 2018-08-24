@@ -7,6 +7,14 @@ class CommentsController < ApplicationController
   end
 
   def edit
+    @comment = Comment.find(params[:id])
+    redirect_to edit_comment_path(@comment)
+  end
+
+  def update
+    @comment = Comment.find(params[:id])
+    @comment.update(comment_params)
+    redirect_to user_path(current_user)
   end
 
   def new
@@ -19,6 +27,12 @@ class CommentsController < ApplicationController
     @comment.picture_id = session[:picture_id]
     @comment.save
     redirect_to @comment.picture
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to user_path(current_user)
   end
 
 private

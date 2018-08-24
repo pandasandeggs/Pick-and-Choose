@@ -1,6 +1,6 @@
 <h1>Pictures</h1>
 <% @pictures.each do |picture| %>
   <%= link_to picture_path(picture) do %>
-    <img src= "<%= picture.image_url %>" >
+    <img src= "<%= picture.image_url %>" width = "250" height = "250">
   <%end%>
 <%end%>

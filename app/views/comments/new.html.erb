@@ -1,7 +1,7 @@
 <h3>Add Comment</h3>
-  <%= form_with model: Comment.new do |form| %>
+  <%= form_with model: @comment do |form| %>
   <div><% form.text_field :picture_id, value: @picture.id %></div>
    <div><% form.text_field :user_id, value: session[:user_id] %></div>
-   <div><%=form.text_area :message %></div>
+   <div><%=form.text_area :message, value: @comment.message %></div>
    <%= form.submit %>
  <%end%>
