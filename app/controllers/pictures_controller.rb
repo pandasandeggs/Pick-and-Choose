@@ -4,7 +4,6 @@ class PicturesController < ApplicationController
   end
 
   def show
-    byebug
     @picture = Picture.find(params[:id])
     session[:picture_id] = @picture.id
   end

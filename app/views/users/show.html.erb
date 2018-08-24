@@ -18,8 +18,6 @@
       <tr>
         <td><%= comment.message %></td>
         <td>          </td>
-        <td><%= button_to 'Edit', comment, method: :patch, data: { confirm: 'Are you sure?' } %></td>
-        <td>          </td>
         <td><%= button_to 'Delete', comment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

@@ -35,6 +35,17 @@ class CommentsController < ApplicationController
     redirect_to user_path(current_user)
   end
 
+  # def destroy
+  #   if params[:id] == current_user
+  #       @comment = Comment.find(params[:id])
+  #       @comment.destroy
+  #       redirect_to user_path(current_user)
+  #   else
+  #     flash[:error] = "Nice try!  You do not have permission to delete this photo!"
+  #     redirect_to user_path(current_user)
+  #   end
+  # end
+
 private
   def comment_params
     params.require(:comment).permit(:message, :picture_id, :user_id)

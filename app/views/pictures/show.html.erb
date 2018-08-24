@@ -11,14 +11,14 @@
 
 
 <h3>Comments</h3>
-<ul>
+<table>
     <% @picture.comments.each do |comment| %>
-        <%= link_to comment.user.username, user_path(comment.user) %>
-      <li><%= comment.message %></li><br>
+    <tr>
+      <td><%= link_to comment.user.username, user_path(comment.user) %></td>
+      <td><%= comment.message %><td>
+    </tr>
     <% end %>
-</ul>
+</table>
 
 
 <%= render template: "comments/new.html.erb", :picture => @picture %>
-
-<%= button_to "Delete Photo", @picture, method: :delete,data:{confirm: "Are You Sure?"} %>
